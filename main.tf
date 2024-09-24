@@ -8,9 +8,10 @@ terraform {
   }
 }
 # Configure the AWS Provider
-# provider "aws" {
-#   region = "us-east-1"
-# }
+ provider "aws" {
+   region = "ap-southeast-1"
+ }
+
 
 resource "aws_apigatewayv2_api" "this" {
   count = var.create && var.create_api_gateway ? 1 : 0
