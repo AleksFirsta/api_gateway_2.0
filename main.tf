@@ -1,4 +1,17 @@
 # API Gateway
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 5.0"
+    }
+  }
+}
+# Configure the AWS Provider
+# provider "aws" {
+#   region = "us-east-1"
+# }
+
 resource "aws_apigatewayv2_api" "this" {
   count = var.create && var.create_api_gateway ? 1 : 0
 
